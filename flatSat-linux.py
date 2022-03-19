@@ -56,7 +56,7 @@ while True:
 
             if name:
                 t=time.strftime("_%H%M%S") #current time string
-                imgname = ('home/pi/Home/MIT-CubeSat/Images/%s%s') #chagne didrectory to your folder
+                imgname = ('/home/pi/Home/MIT-CubeSat/Images/%s%s') #chagne didrectory to your folder
                 img = camera.capture(imgname+ ".jpg")
                 git_push()
 
