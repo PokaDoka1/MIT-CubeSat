@@ -11,7 +11,7 @@ from time import sleep
 import os
 import board
 import busio
-import adafruit_Bno055
+import adafruit_bno055
 from git import Repo
 from picamera import PiCamera
 
