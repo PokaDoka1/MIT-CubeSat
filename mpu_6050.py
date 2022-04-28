@@ -4,15 +4,31 @@ from git import Repo
 from picamera import PiCamera
 mpu = mpu6050(0x28)
 
+#make sure you can git clone
+#git pull 
+#generate data
+#append data to the file.
+#git add the file
+
+
+#git commit
+
 while True:
     print("Temp : "+str(mpu.get_temp()))
     print()
-
+   
+    originalDataFile = open("/home/pi/Home/MIT-CubeSat/IMU data/gryo_data.txt", "a")
+    
+                    
     accel_data = mpu.get_accel_data()
     """print("Acc X : "+str(accel_data['x']))
     print("Acc Y : "+str(accel_data['y']))
     print("Acc Z : "+str(accel_data['z']))
     print()"""
+    
+    originalDataFile.write("Acc X : "+str(accel_data['x'])
+    originalDataFile.write("Acc Y : "+str(accel_data['y']))
+    originalDataFile.write("Acc Z : "+str(accel_data['z'])) 
 
     gyro_data = mpu.get_gyro_data()
     """print("Gyro X : "+str(gyro_data['x']))
@@ -20,7 +36,12 @@ while True:
     print("Gyro Z : "+str(gyro_data['z']))
     print()
     print("-------------------------------")"""
-    time.sleep(1
+    time.sleep(1)
+    
+    originalDataFile.write("Gyro X : "+str(gyro_data['x']))
+    originalDataFile.write("Acc Y : "+str(accel_data['y']))
+    originalDataFile.write("Acc Z : "+str(accel_data['z']))
+    
     git_push()
 
 def git_push():
