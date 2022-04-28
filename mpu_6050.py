@@ -27,7 +27,7 @@ while True:
     print("Acc Z : "+str(accel_data['z']))
     print()"""
     
-    originalDataFile.write("Acc X : "+str(accel_data['x'])
+    originalDataFile.write("Acc X : "+str(accel_data['x']))
     originalDataFile.write("Acc Y : "+str(accel_data['y']))
     originalDataFile.write("Acc Z : "+str(accel_data['z'])) 
 
