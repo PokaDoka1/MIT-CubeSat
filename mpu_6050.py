@@ -9,11 +9,12 @@ mpu = mpu6050(0x28)
 #generate data
 #append data to the file.
 #git add the file
-
-
 #git commit
 
+git_pull()
+
 while True:
+    
     print("Temp : "+str(mpu.get_temp()))
     print()
    
@@ -36,17 +37,16 @@ while True:
     print("Gyro Z : "+str(gyro_data['z']))
     print()
     print("-------------------------------")"""
-    time.sleep(1)
+    time.sleep(5)
     
     originalDataFile.write("Gyro X : "+str(gyro_data['x']))
-    originalDataFile.write("Acc Y : "+str(accel_data['y']))
-    originalDataFile.write("Acc Z : "+str(accel_data['z']))
-    
+    originalDataFile.write("Gyro Y : "+str(gyro_data['y']))
+    originalDataFile.write("Gyro Z : "+str(gyro_data['z']))
     git_push()
 
 def git_push():
     try:
-        #halps
+
         repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
         #halps
         repo.git.add('IMU Data')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
@@ -58,3 +58,9 @@ def git_push():
         print('pushed changes')
     except:
         print('Couldnt upload to git')
+                           
+def git_pull():
+      repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
+        origin = repo.remote('origin')
+        print('pulled repository')
+        origin.pull()
