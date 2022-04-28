@@ -61,6 +61,6 @@ def git_push():
                            
 def git_pull():
       repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
-        origin = repo.remote('origin')
-        print('pulled repository')
-        origin.pull()
+      origin = repo.remote('origin')
+      print('pulled repository')
+      origin.pull()
