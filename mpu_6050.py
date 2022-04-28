@@ -16,7 +16,7 @@ def git_push():
 
         repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
         #halps
-        repo.git.add('IMU Data')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
+        repo.git.add('IMU_Data')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
         repo.index.commit('Gyro Data')
         print('made the commit')
         origin = repo.remote('origin')
@@ -40,7 +40,7 @@ while True:
     print("Temp : "+str(mpu.get_temp()))
     print()
    
-    originalDataFile = open("/home/pi/Home/MIT-CubeSat/IMU data/gryo_data.txt", "a")
+    originalDataFile = open("/home/pi/Home/MIT-CubeSat/IMU_data/gryo_data.txt", "a")
     
                     
     accel_data = mpu.get_accel_data()
