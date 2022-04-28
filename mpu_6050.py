@@ -49,9 +49,9 @@ while True:
     print("Acc Z : "+str(accel_data['z']))
     print()"""
     
-    originalDataFile.write("Acc X : "+str(accel_data['x']))
-    originalDataFile.write("Acc Y : "+str(accel_data['y']))
-    originalDataFile.write("Acc Z : "+str(accel_data['z'])) 
+    originalDataFile.write("Acc X : "+str(accel_data['x']) + "\n")
+    originalDataFile.write("Acc Y : "+str(accel_data['y'])+ "\n")
+    originalDataFile.write("Acc Z : "+str(accel_data['z'])+ "\n") 
 
     gyro_data = mpu.get_gyro_data()
     """print("Gyro X : "+str(gyro_data['x']))
@@ -61,8 +61,8 @@ while True:
     print("-------------------------------")"""
     time.sleep(5)
     
-    originalDataFile.write("Gyro X : "+str(gyro_data['x']))
-    originalDataFile.write("Gyro Y : "+str(gyro_data['y']))
-    originalDataFile.write("Gyro Z : "+str(gyro_data['z']))
+    originalDataFile.write("Gyro X : "+str(gyro_data['x'])+ "\n")
+    originalDataFile.write("Gyro Y : "+str(gyro_data['y'])+ "\n")
+    originalDataFile.write("Gyro Z : "+str(gyro_data['z'])+ "\n")
     git_push()
 
