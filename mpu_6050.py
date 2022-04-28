@@ -42,7 +42,7 @@ while True:
     print("Temp : "+str(mpu.get_temp()))
     print()
    
-    originalDataFile = open("/home/pi/Home/MIT-CubeSat/IMU_Data/gryo_data.txt", "a")
+    originalDataFile = open("/home/pi/Home/MIT-CubeSat/IMU_Data/gyro_data.txt", "a")
     
                     
     accel_data = mpu.get_accel_data()
