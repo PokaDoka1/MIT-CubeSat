@@ -20,7 +20,8 @@ while True:
     print("Gyro Z : "+str(gyro_data['z']))
     print()
     print("-------------------------------")"""
-    time.sleep(1)
+    time.sleep(1
+    git_push()
 
 def git_push():
     try:
