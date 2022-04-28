@@ -35,12 +35,14 @@ def git_pull():
 
 git_pull()
 
+loopCount = 0
+
 while True:
     
     print("Temp : "+str(mpu.get_temp()))
     print()
    
-    originalDataFile = open("/home/pi/Home/MIT-CubeSat/IMU_Data/gryo_data.txt", "a")
+    originalDataFile = open("/home/pi/Home/MIT-CubeSat/IMU_Data/gyro_data.txt", "a")
     
                     
     accel_data = mpu.get_accel_data()
@@ -64,5 +66,7 @@ while True:
     originalDataFile.write("Gyro X : "+str(gyro_data['x'])+ "\n")
     originalDataFile.write("Gyro Y : "+str(gyro_data['y'])+ "\n")
     originalDataFile.write("Gyro Z : "+str(gyro_data['z'])+ "\n")
-    git_push()
+    loopCount++
+    if (loopCount % 30 == 0):
+        git_push()
 
