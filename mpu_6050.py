@@ -11,6 +11,28 @@ mpu = mpu6050(0x28)
 #git add the file
 #git commit
 
+def git_push():
+    try:
+
+        repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
+        #halps
+        repo.git.add('IMU Data')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
+        repo.index.commit('Gyro Data')
+        print('made the commit')
+        origin = repo.remote('origin')
+        print('added remote')
+        origin.push()
+        print('pushed changes')
+    except:
+        print('Couldnt upload to git')
+                           
+def git_pull():
+      repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
+      origin = repo.remote('origin')
+      print('pulled repository')
+      origin.pull()
+
+
 git_pull()
 
 while True:
@@ -44,23 +66,3 @@ while True:
     originalDataFile.write("Gyro Z : "+str(gyro_data['z']))
     git_push()
 
-def git_push():
-    try:
-
-        repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
-        #halps
-        repo.git.add('IMU Data')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
-        repo.index.commit('Gyro Data')
-        print('made the commit')
-        origin = repo.remote('origin')
-        print('added remote')
-        origin.push()
-        print('pushed changes')
-    except:
-        print('Couldnt upload to git')
-                           
-def git_pull():
-      repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
-      origin = repo.remote('origin')
-      print('pulled repository')
-      origin.pull()
