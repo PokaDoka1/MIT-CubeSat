@@ -66,7 +66,7 @@ while True:
     originalDataFile.write("Gyro X : "+str(gyro_data['x'])+ "\n")
     originalDataFile.write("Gyro Y : "+str(gyro_data['y'])+ "\n")
     originalDataFile.write("Gyro Z : "+str(gyro_data['z'])+ "\n")
-    loopCount++
+    loopCount+=1
     if (loopCount % 30 == 0):
         git_push()
 
