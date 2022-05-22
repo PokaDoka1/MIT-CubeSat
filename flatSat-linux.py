@@ -24,7 +24,7 @@ camera = PiCamera()
 def git_push():
     try:
         #halps
-        repo = Repo('/home/pi/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
+        repo = Repo('/home/cubesat/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
         #halps
         repo.git.add('Images')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
         repo.index.commit('New Photo')
@@ -38,8 +38,8 @@ def git_push():
 
 #SET THRESHOLD
 threshold = 5.62901
-photoPauseTime=5
-loopPauseTime = 5
+photoPauseTime=3
+loopPauseTime = 3
 
 #read acceleration
 while True:
@@ -50,13 +50,13 @@ while True:
 
         #TAKE/SAVE/UPLOAD A PICTURE
         if accel>threshold:
-            print("Taking picture in 5 seconds")
+            print("Taking picture in 3 seconds")
             sleep(photoPauseTime)
             name = "Lady Lion Stemmers" #Last Name, First Initial
 
             if name:
                 t=time.strftime("_%H%M%S") #current time string
-                imgname = ('/home/pi/Home/MIT-CubeSat/Images/%s%s') #chagne didrectory to your folder
+                imgname = ('/home/cubesat/Home/MIT-CubeSat/Images/%s%s') #chagne didrectory to your folder
                 img = camera.capture(imgname+ ".jpg")
                 git_push()
 
