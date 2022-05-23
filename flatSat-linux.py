@@ -97,7 +97,7 @@ while True:
         print("Gyro Z : "+str(gyro_data['z']))
         print()
         print("-------------------------------")
-        time.sleep(5)
+
 
         originalDataFile.write("Gyro X : "+str(gyro_data['x'])+ "\n")
         originalDataFile.write("Gyro Y : "+str(gyro_data['y'])+ "\n")
