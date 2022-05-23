@@ -3,22 +3,20 @@ import cv2
 import numpy as np
 
 # Read image
-img = cv2.imread("C:\\Users\\PokaDoka\\Pictures\\leaves\\blue_peeps.jpg")
+img = cv2.imread("C:\\Users\\PokaDoka\\Pictures\\leaves\\both.jpg")
 
 # Here, you define your target color as
 # a tuple of three values: RGB
-#green = [130, 158, 0]
-#green = [42,89,227]
+#green = [115,42,169]
+#green = [67,17,101]
+green = [111,33,164]
+#best working one = green = [112,42,167]
 
-#this is the hset one
-green = [37,73,219]
-#green = [11,9,54]
-#green = [9,16,90]
 dog = []
 
 # You define an interval that covers the values
 # in the tuple and are below and above them by 20
-diff = 230
+diff = 100
 
 for color in green:
     if diff + color > 255:
@@ -85,11 +83,15 @@ for (lower, upper) in boundaries:
 
     # This is the color percent calculation, considering the resize I did earlier.
     colorPercent = (ratio_green * 100)
-    print("color  percent: " + str(colorPercent))
 
     # Print the color percent, use 2 figures past the decimal point
 
     print('blue pixel percentage:', np.round(colorPercent, 2))
+
+    if colorPercent > 99:
+        print("Water most likely detected with " + str(colorPercent) + "%")
+    else:
+        print("plastic detected with " + str(100 - colorPercent) + "%")
 
     # numpy's hstack is used to stack two images horizontally,
     # so you see the various images generated in one figure:
