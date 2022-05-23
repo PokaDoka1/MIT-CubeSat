@@ -38,11 +38,11 @@ def git_push():
         #halps
         repo.git.add('Images')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
         repo.index.commit('New Photo')
-        print('made the commit')
+        #print('made the commit')
         origin = repo.remote('origin')
-        print('added remote')
+        #print('added remote')
         origin.push()
-        print('pushed changes')
+        print('pushed image with plastic to github' + "\n")
     except:
         print('Couldnt upload to git')
 
@@ -67,10 +67,8 @@ while True:
             if name:
                 t=time.strftime("_%H%M%S") #current time string
                 imgname = ('/home/cubesat/Home/MIT-CubeSat/Images/blah') #chagne didrectory to your folder
-                #img = cv2.imread(camera.capture(imgname+ ".jpg"))
                 cat = camera.capture(imgname + ".jpg")
                 img = cv2.imread('/home/cubesat/Home/MIT-CubeSat/Images/blah.jpg')
-                print("the type is " + str(type(img)))
                 for color in green:
                     if diff + color > 255:
                          dog.append(255)
