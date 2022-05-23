@@ -15,6 +15,7 @@ import adafruit_bno055
 from git import Repo
 from picamera import PiCamera
 import numpy as np
+import cv2
 
 green = [111,33,164]
 dog = []
