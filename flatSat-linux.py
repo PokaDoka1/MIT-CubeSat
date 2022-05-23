@@ -18,6 +18,7 @@ import numpy as np
 
 green = [111,33,164]
 dog = []
+diff = 100
 
 for color in green:
     if diff + color > 255:
