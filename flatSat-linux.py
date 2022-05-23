@@ -47,15 +47,15 @@ def git_push_image():
     except:
         print('Couldnt upload to git')
         
- def git_push_data():
-   try:
-       repo = Repo('/home/cubesat/Home/MIT-CubeSat')
-       repo.git.add('IMU_Data')
-       repo.index.commit('Gyro Data')
-       origin = repo.remote('origin')
-       print("push imu data" + "\n")
-       origin.push()
-   except:
+def git_push_data():
+    try:
+        repo = Repo('/home/cubesat/Home/MIT-CubeSat')
+        repo.git.add('IMU_Data')
+        repo.index.commit('Gyro Data')
+        origin = repo.remote('origin')
+        print("push imu data" + "\n")
+        origin.push()
+    except:
         print('Couldnt upload to git')
         
 def git_pull():
