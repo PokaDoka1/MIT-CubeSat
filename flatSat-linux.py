@@ -66,7 +66,7 @@ while True:
 
             if name:
                 t=time.strftime("_%H%M%S") #current time string
-                imgname = ('/home/cubesat/Home/MIT-CubeSat/Images/%s%s') #chagne didrectory to your folder
+                imgname = ('/home/cubesat/Home/MIT-CubeSat/Images/blah') #chagne didrectory to your folder
                 img = cv2.imread(camera.capture(imgname+ ".jpg"))
                 for color in green:
                     if diff + color > 255:
