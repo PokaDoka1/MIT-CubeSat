@@ -69,7 +69,7 @@ while True:
                 imgname = ('/home/cubesat/Home/MIT-CubeSat/Images/blah') #chagne didrectory to your folder
                 #img = cv2.imread(camera.capture(imgname+ ".jpg"))
                 cat = camera.capture(imgname + ".jpg")
-                img = cv2.imread('/home/cubesat/Home/MIT-CubeSat/Images/blah.jpg")
+                img = cv2.imread('/home/cubesat/Home/MIT-CubeSat/Images/blah.jpg')
                 print("the type is " + str(type(img)))
                 for color in green:
                     if diff + color > 255:
