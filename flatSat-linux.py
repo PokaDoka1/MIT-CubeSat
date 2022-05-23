@@ -106,8 +106,7 @@ while True:
         if (loopCount % 30 == 0):
             git_push_data()    
 
-        
-        """
+
         
         accelX, accelY, accelZ = sensor.acceleration
 
@@ -180,4 +179,4 @@ while True:
                         print(f"plastic detected with {100 - colorPercent:.2f}%")
                         git_push_image()
 
-        sleep(loopPauseTime)"""
+        sleep(loopPauseTime)
