@@ -38,7 +38,7 @@ camera = PiCamera()
 #bonus: function for uplodaing image to Github
 def git_push_image():
     try:
-         repo = Repo('/home/cubesat/Home/MIT-CubeSat')
+        repo = Repo('/home/cubesat/Home/MIT-CubeSat')
         repo.git.add('Images')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
         repo.index.commit('New Photo')
         origin = repo.remote('origin')
