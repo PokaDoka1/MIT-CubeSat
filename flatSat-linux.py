@@ -175,6 +175,7 @@ while True:
 
                     if colorPercent > 99:
                         print(f"Water most likely detected with {colorPercent:.2f}% ")
+                        git_push_image()
                     else:
                         print(f"plastic detected with {100 - colorPercent:.2f}%")
                         git_push_image()
