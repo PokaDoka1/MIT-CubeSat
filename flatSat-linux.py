@@ -49,7 +49,7 @@ def git_push_image():
         
  def git_push_data():
     try:
-        repo = Repo('/home/cubesat/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
+        repo = Repo('/home/cubesat/Home/MIT-CubeSat')
         repo.git.add('IMU_Data')
         repo.index.commit('Gyro Data')
         origin = repo.remote('origin')
