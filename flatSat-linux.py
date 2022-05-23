@@ -20,23 +20,7 @@ green = [111,33,164]
 dog = []
 diff = 100
 
-for color in green:
-    if diff + color > 255:
-         dog.append(255)
-    else:
-        dog.append(diff + color)
-        
-# Be aware that opencv loads image in BGR format,
-# that's why the color values have been adjusted here:
-boundaries = [([green[2], green[1], green[0]], [dog[2],dog[1], dog[0]])]
 
-# Scale your BIG image into a small one:
-scalePercent = 0.3
-
-# Calculate the new dimensions
-width = int(img.shape[1] * scalePercent)
-height = int(img.shape[0] * scalePercent)
-newSize = (width, height)
 
 # ur mom
 
@@ -83,6 +67,23 @@ while True:
                 t=time.strftime("_%H%M%S") #current time string
                 imgname = ('/home/cubesat/Home/MIT-CubeSat/Images/%s%s') #chagne didrectory to your folder
                 img = camera.capture(imgname+ ".jpg")
+                for color in green:
+                    if diff + color > 255:
+                         dog.append(255)
+                    else:
+                        dog.append(diff + color)
+
+                # Be aware that opencv loads image in BGR format,
+                # that's why the color values have been adjusted here:
+                boundaries = [([green[2], green[1], green[0]], [dog[2],dog[1], dog[0]])]
+
+                # Scale your BIG image into a small one:
+                scalePercent = 0.3
+
+                # Calculate the new dimensions
+                width = int(img.shape[1] * scalePercent)
+                height = int(img.shape[0] * scalePercent)
+                newSize = (width, height)
                 img = cv2.resize(img, newSize, None, None, None, cv2.INTER_AREA)
                 for (lower, upper) in boundaries:
                     # You get the lower and upper part of the interval:
