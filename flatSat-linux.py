@@ -110,14 +110,13 @@ while True:
                     # to a green pixel. Divide by the image size and you got the
                     # percentage of green pixels in the original image:
                     ratio_green = cv2.countNonZero(mask)/(img.size/3)
-                    print(f"ratio green: {ratio_green}")
 
                     # This is the color percent calculation, considering the resize I did earlier.
                     colorPercent = (ratio_green * 100)
 
                     # Print the color percent, use 2 figures past the decimal point
 
-                    print('blue pixel percentage:', np.round(colorPercent, 2))
+                    #print('blue pixel percentage:', np.round(colorPercent, 2))
 
                     if colorPercent > 99:
                         print(f"Water most likely detected with {colorPercent:.2f}% ")
