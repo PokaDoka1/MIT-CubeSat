@@ -36,22 +36,25 @@ sensor = adafruit_bno055.BNO055_I2C(i2c)
 camera = PiCamera()
 
 #bonus: function for uplodaing image to Github
-def git_push():
+def git_push_image():
     try:
-        #halps
+         repo = Repo('/home/cubesat/Home/MIT-CubeSat')
+        repo.git.add('Images')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
+        repo.index.commit('New Photo')
+        origin = repo.remote('origin')
+        origin.push()
+        print('pushed image with plastic to github' + "\n")
+    except:
+        print('Couldnt upload to git')
+        
+ def git_push_data():
+    try:
         repo = Repo('/home/cubesat/Home/MIT-CubeSat')  # PATH TO YOUR GITHUB REPO
         repo.git.add('IMU_Data')
         repo.index.commit('Gyro Data')
         origin = repo.remote('origin')
+        print("push imu data" + "\n")
         origin.push()
-        
-        repo.git.add('Images')  # PATH TO YOUR IMAGES FOLDER WITHIN YOUR GITHUB REPO
-        repo.index.commit('New Photo')
-        #print('made the commit')
-        origin = repo.remote('origin')
-        #print('added remote')
-        origin.push()
-        print('pushed image with plastic to github' + "\n")
     except:
         print('Couldnt upload to git')
         
@@ -101,7 +104,7 @@ while True:
         originalDataFile.write("Gyro Z : "+str(gyro_data['z'])+ "\n")
         loopCount+=1
         if (loopCount % 30 == 0):
-            git_push()    
+            git_push_data()    
 
         
         
@@ -175,6 +178,6 @@ while True:
                         print(f"Water most likely detected with {colorPercent:.2f}% ")
                     else:
                         print(f"plastic detected with {100 - colorPercent:.2f}%")
-                        git_push()
+                        git_push_image()
 
         sleep(loopPauseTime)
