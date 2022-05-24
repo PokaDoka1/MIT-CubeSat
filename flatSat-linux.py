@@ -106,7 +106,7 @@ while True:
         if (loopCount % 30 == 0):
             git_push_data()    
 
-"""
+
         
         accelX, accelY, accelZ = sensor.acceleration
 
@@ -181,4 +181,4 @@ while True:
                         git_push_image()
 
         sleep(loopPauseTime)
-"""
+
