@@ -22,7 +22,7 @@ from git import Repo
 from picamera import PiCamera
 mpu = mpu6050(0x28)
 
-green = [149,48,115]
+green = [227,115,223]
 dog = []
 diff = 100
 
