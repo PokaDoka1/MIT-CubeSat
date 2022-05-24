@@ -22,7 +22,7 @@ from git import Repo
 from picamera import PiCamera
 mpu = mpu6050(0x28)
 
-green = [163,59,149]
+green = [149,48,115]
 dog = []
 diff = 100
 
@@ -173,7 +173,7 @@ while True:
 
                     #print('blue pixel percentage:', np.round(colorPercent, 2))
 
-                    if colorPercent > 99:
+                    if colorPercent > 98:
                         print(f"Water most likely detected with {colorPercent:.2f}% ")
                         git_push_image()
                     else:
