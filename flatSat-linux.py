@@ -70,8 +70,8 @@ loopCount = 0
 
 #SET THRESHOLD
 threshold = 5.62901
-photoPauseTime=3
-loopPauseTime = 3
+photoPauseTime=1
+loopPauseTime = 1
 
 #read acceleration
 while True:
