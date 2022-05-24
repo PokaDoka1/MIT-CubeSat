@@ -115,7 +115,7 @@ while True:
 
         #TAKE/SAVE/UPLOAD A PICTURE
         if accel>threshold:
-            print("Taking picture in 3 seconds")
+            print("Taking picture in 1 seconds")
             sleep(photoPauseTime)
             name = "Lady Lion Stemmers" #Last Name, First Initial
 
